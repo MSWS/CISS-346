@@ -1,73 +1,34 @@
-%%
-%% This is file `sample-acmlarge.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% samples.dtx  (with options: `acmlarge')
-%% 
-%% IMPORTANT NOTICE:
-%% 
-%% For the copyright see the source file.
-%% 
-%% Any modified versions of this file must be renamed
-%% with new filenames distinct from sample-acmlarge.tex.
-%% 
-%% For distribution of the original source see the terms
-%% for copying and modification in the file samples.dtx.
-%% 
-%% This generated file may be distributed as long as the
-%% original source files, as listed above, are part of the
-%% same distribution. (The sources need not necessarily be
-%% in the same archive or directory.)
-%%
-%%
-%% Commands for TeXCount
-%TC:macro \cite [option:text,text]
-%TC:macro \citep [option:text,text]
-%TC:macro \citet [option:text,text]
-%TC:envir table 0 1
-%TC:envir table* 0 1
-%TC:envir tabular [ignore] word
-%TC:envir displaymath 0 word
-%TC:envir math 0 word
-%TC:envir comment 0 0
-%%
-%%
-%% The first command in your LaTeX source must be the \documentclass
-%% command.
-%%
-%% For submission and review of your manuscript please change the
-%% command to \documentclass[manuscript, screen, review]{acmart}.
-%%
-%% When submitting camera ready or to TAPS, please change the command
-%% to \documentclass[sigconf]{acmart} or whichever template is required
-%% for your publication.
-%%
-%%
-\documentclass[acmlarge]{acmart}
+\documentclass[acmsmall]{acmart}
 
-%%
-%% \BibTeX command to typeset BibTeX logo in the docs
 \AtBeginDocument{%
   \providecommand\BibTeX{{%
     Bib\TeX}}}
+\setcopyright{acmlicensed}
+\copyrightyear{2024}
 
-%% Rights management information.  This information is sent to you
-%% when you complete the rights form.  These commands have SAMPLE
-%% values in them; it is your responsibility as an author to replace
-%% the commands and values with those provided to you when you
-%% complete the rights form.
+\acmYear{2024}
+\acmDOI{cybersecurity.tomcruise}
+\acmJournal{TISSEC}
+\acmVolume{420}
+\acmNumber{69}
+\acmArticle{3.14}
+\acmMonth{1}
+
 \setcopyright{acmlicensed}
 \copyrightyear{2024}
 \begin{document}
 
-
 \title{Historic Cybersecurity Breaches Caused by a Lack of Physical Security}
 
 \author{Isaac Boaz}
+\email{boazi@wwu.edu}
 \email{isaac.k.boaz@gmail.com}
-
+\affiliation{%
+  \institution{Western Washington University}
+  \city{Seattle}
+  \state{Washington}
+  \country{USA}
+}
 
 \renewcommand{\shortauthors}{Boaz}
 
@@ -79,6 +40,48 @@
 \end{abstract}
 
 \keywords{Cybersecurity, Security, Software, Physical, Breaches}
+
+\begin{CCSXML}
+  <ccs2012>
+  <concept>
+  <concept_id>10003456.10003462.10003561.10003563</concept_id>
+  <concept_desc>Social and professional topics~Network access restrictions</concept_desc>
+  <concept_significance>300</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10003456.10003462.10003561.10003566</concept_id>
+  <concept_desc>Social and professional topics~Universal access</concept_desc>
+  <concept_significance>100</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10003456.10003462.10003574.10003000</concept_id>
+  <concept_desc>Social and professional topics~Social engineering attacks</concept_desc>
+  <concept_significance>500</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10003456.10003462.10003574.10003578</concept_id>
+  <concept_desc>Social and professional topics~Malware / spyware crime</concept_desc>
+  <concept_significance>100</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10002978.10002991</concept_id>
+  <concept_desc>Security and privacy~Security services</concept_desc>
+  <concept_significance>500</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10002978.10003006</concept_id>
+  <concept_desc>Security and privacy~Systems security</concept_desc>
+  <concept_significance>500</concept_significance>
+  </concept>
+  </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Security and privacy~Security services}
+\ccsdesc[500]{Security and privacy~Systems security}
+\ccsdesc[300]{Social and professional topics~Network access restrictions}
+\ccsdesc[500]{Social and professional topics~Social engineering attacks}
+\ccsdesc[100]{Social and professional topics~Universal access}
+\ccsdesc[100]{Social and professional topics~Malware / spyware crime}
 
 \maketitle
 
@@ -93,16 +96,16 @@ your system.
 
 Physical security is a part of cybersecurity. The act of protecting and
 securing IT assets, data, and resources from physical attacks is a part
-of cybersecurity. This article will review and analyze historical
-occurences where a lack of physical security lead to a lack or even breach
-of cybersecurity.
+of cybersecurity. This article will review and analyze both fictional and
+non-fictional occurences where a lack of physical security lead to a lack
+or breach of cybersecurity.
 
 \section{Basic Physical Security}
 Regardless of what a device is doing, it is always important to understand
 the physical environment and security that the device is in. Even the
 best anti-virus software cannot be protected from a malicious actor
-uninstalling it. Physical access can mean a man in the middle attack,
-power outages, or even a keylogger being installed. 
+uninstalling it. Physical access could mean a man in the middle attack,
+power outages, or even a keylogger being installed.
 
 Some basic physical security practices include:
 \begin{itemize}
@@ -110,12 +113,13 @@ Some basic physical security practices include:
   \item Restricting physical access to those that need it
   \item Locking the doors and windows of a building
   \item Scanning and limiting who can enter a building
+  \item Ensuring that all devices are up to date
 \end{itemize}
 
 Ultimately, physical security can be just as important and just as in-depth
-as cybersecurity. 
+as cybersecurity.
 
-\section{Google's Plasma Globe \texorpdfstring{\cite{Google01}}{}} 
+\section{Google's Plasma Globe \texorpdfstring{\cite{Google01}}{}}
 One of the best ways to test your security is by doing it yourself. Google
 went about this by creating a "Red Team", a team of white-hat hackers that
 were tasked with trying to hack Google. Though this task certainly includes
@@ -132,9 +136,16 @@ In order to give the device to Google's employees, the Red Team disguised the
 device as an anniversary gift from Google (based off of LinkedIn).
 
 While not everyone that received the device plugged it in, it only took one of
-Google's employees to plug it in for the attack be successful. The Red Team
-gained unauthorized access to the documentation on Google's Glass, which
-at the time was heavily in development.
+Google's employees to plug it in for the attack be successful. Upon successful
+execution of the script, the Red Team had access to the employee's credentials.
+Through this, they were able to send emails to other employees which had higher
+privileges. Through these emails with attachments, the Red Team was able to
+gain access to Google's Glasses internal documentation.
+
+Finally, the Red Team attempted to obtain a physical build of the Google Glasses.
+Unfortunately, due to a few typos, the Red Team caused a few red flags to be raised,
+and instead of going to pick up the build, they were met with Google's Chief Security
+Officer.
 
 \subsection{Analysis}
 What ultimately allowed this attack to be successful was improper training, understanding,
@@ -148,7 +159,7 @@ have been successful.
 \subsection{Mitigation}
 Google learned from this breach and created a software that would listen to extremely
 fast keystrokes from USB devices and block them. This software was then installed
-on all of Google's computers.
+on all of Google's computers, and publicly released \cite{Google02}.
 
 While a software solution is a good start, it is not a complete solution. A theoretical
 slow USB device could still be used to bypass this software. A better solution would
@@ -158,7 +169,7 @@ be to train employees to be aware of the dangers of plugging in unauthorized dev
 While not a real-life example, the movie Now You See Me 2 \cite{NowYouSeeMe2} presents
 a potential example of a physical security breach. In the movie, the main characters
 are able to breach a company's phone presentation by disguising as server maintenance,
-quickly convincing security that the original server maintainer was crazy, and 
+quickly convincing security that the original server maintainer was crazy, and
 installing a device that would allow them to control the presentation.
 
 \subsection{Attack}
@@ -192,8 +203,8 @@ maintainer should have also locked the door behind him, preventing the main char
 from entering the room. Lastly, ideally the security guards would have been trained
 to be aware of social engineering and to not be easily convinced by lies.
 
-\section{Mission Impossible}
-A much more realistic example of a physical security breach is in the movie
+\section{Mission Impossible \texorpdfstring{\cite{missionimpossible}}{}}
+A more realistic example of a physical security breach is in the movie
 Mission Impossible. In the movie, Ethan Hunt (played by Tom Cruise) is tasked
 with stealing the NOC list from a CIA building. The NOC list is a list of all
 CIA agents that are currently undercover. The CIA building is heavily guarded
@@ -217,9 +228,10 @@ computer and steals the NOC list.
 \subsection{Analysis}
 Here we can see that the CIA building has many layers of physical security.
 Despite all of these layers, Ethan Hunt was still able to breach the security.
-Unfortunately, the CIA building failed to account for plot armor, which is 
+Unfortunately, the CIA building failed to account for plot armor, which is
 a classic mistake in the field of cybersecurity.
 
+\subsection{Mitigation}
 Realistically, the CIA building should have had a more secure ventilation system;
 we see that the team was able to get into the ventilation system (and the building itself)
 by disguising as firefighers. The CIA did not have proper protocols or procedures
@@ -227,6 +239,25 @@ for fire alarms or drills, which allowed the team to easily enter the building.
 
 Additionally, requiring an authorized person to be in the room to access the
 computer would be a good requirement.
+
+\section{Conclusion}
+We have seen examples of physical security and how attackers may navigate around
+it. Being aware of all potential entrypoints and the human element of security is important
+to keep in mind when designing a secure system. Security exploits could stem from the
+design of a building (such as a server room being too accessible) to the training of
+its employees.
+
+Ensuring that all employees are trained to be aware of physical security and the dangers
+of social engineering is important. Additionally, ensuring that all employees are trained
+to be aware of the dangers of plugging in unauthorized devices is important. Having properly
+defined protocols and procedures for unlikely events is also important.
+Companies should internally test their security- GitLab for example similarly has a
+"Red Team" that is tasked with trying to hack GitLab \cite{GitLab}.
+
+\begin{acks}
+  I would like to thank Google for their Plasma Globe attack, and the creators of
+  Mission Impossible for their interesting portrayal of physical security.
+\end{acks}
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{bib}
