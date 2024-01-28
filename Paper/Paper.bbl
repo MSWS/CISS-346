@@ -1,0 +1,75 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{3}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Google(2022)]%
+        {Google01}
+\bibfield{author}{\bibinfo{person}{Google}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{EP003: Red Team | Hacking Google}}.
+\newblock YouTube.
+\newblock
+\urldef\tempurl%
+\url{https://youtu.be/TusQWn2TQxQ}
+\showURL{%
+Retrieved Jan 28, 2024 from \tempurl}
+
+
+\bibitem[Leterrier(2016)]%
+        {NowYouSeeMe2}
+\bibfield{author}{\bibinfo{person}{L. Leterrier}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \bibinfo{title}{Now You See Me 2}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.imdb.com/title/tt3110958/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Zalewski(2012)]%
+        {lcamtuf}
+\bibfield{author}{\bibinfo{person}{Michal Zalewski}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{The Google plasma globe affair of 2012}.
+\newblock \bibinfo{journal}{\emph{Coredumb.cx}} \bibinfo{number}{plasma\_globe}
+  (\bibinfo{year}{2012}).
+\newblock
+
+
+\end{thebibliography}
