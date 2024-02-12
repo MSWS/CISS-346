@@ -146,7 +146,7 @@ physical security, one example being how they handle their data centers \cite{Go
 Google made a video describing the security of their centers. To emphasize why
 the culture of cyber-security is important,
 Stephanie Wong (a Google employee) admitted she "could talk all day
-about cloud security, (but)physical security (at Google) is still pretty new to me" \cite{GoogleDataVideo}.
+about cloud security, (but) physical security (at Google) is still pretty new to me" \cite{GoogleDataVideo}.
 
 Google's Data Centers are a good example of how physical security is an important
 aspect of cybersecurity.
@@ -154,9 +154,10 @@ aspect of cybersecurity.
 \section{Google's Plasma Globe}
 One of the best ways to test security is by testing, verifying, and self-auditing
 how well the security system holds up. Google went about this by creating a
-"Red Team" \cite{GoogleRedTeamBlog}, a team of white-hat hackers that were tasked with trying to hack Google.
-Though this task certainly includes doing software-based attacks, one of the successful
-attacks was a physical attack.
+"Red Team" \cite{GoogleRedTeamBlog}, a team of white-hat hackers that were tasked with
+trying to hack Google (a testament to their cyber-security culture).
+Though this job includes software-based attacks,
+one of the successful attacks was a physical attack.
 
 \subsection{Google's Plan of Attack}
 The Red Team designed a Plasma Globe that had a USB cable attached to it for power.
@@ -165,7 +166,7 @@ The Red Team added an internal chip that would emulate a USB keyboard when plugg
 in to a computer. After approximately 5-10 minutes, the device would
 quickly type out a command to download a larger payload from the internet \cite{GoogleGlobeBlog}.
 In order to give the device to Google's employees, the Red Team disguised the
-device as an anniversary gift from Google (based off of LinkedIn).
+device as an anniversary gift from Google (using LinkedIn to find anniversaries) \cite{GoogleGlobeVideo}.
 
 While not everyone that received the device plugged it in, it only took one of
 Google's employees to plug it in for the attack be successful. Upon successful
@@ -183,7 +184,7 @@ Officer \cite{GoogleGlobeVideo}.
 Ultimately, this attack was a phishing attack. The Red Team was able to convince
 Google's employees to plug in a USB device that was given to them. The Red Team
 was able to gain access to Google's Glasses internal documentation by using the
-employee's credentials.
+employee's credentials \cite{GoogleGlobeVideo}.
 
 Google's physical security culture did not account for the dangers of plugging in
 unauthorized devices. While Google's employees may have been aware of the dangers
@@ -195,14 +196,34 @@ This attack also highlights the importance of physical security. If Google emplo
 were not allowed to bring in unauthorized external devices, this attack would not
 have been successful.
 
-\subsection{Mitigation}
+\subsection{Mitigation and Response}
 Google learned from this breach and created a software that would listen to extremely
 fast keystrokes from USB devices and block them. This software was then installed
-on all of Google's computers, and publicly released \cite{Google02}.
+on Google's computers, and the software was publicly released \cite{GoogleUSB,GoogleRedTeamBlog}.
 
-While a software solution is a good start, it is not a complete solution. A theoretical
-slow USB device could still be used to bypass this software. A better solution would
-be to train employees to be aware of the dangers of plugging in unauthorized devices.
+While a software solution is a good start, it is not a complete solution. A theoretically
+slow USB device could still be used to bypass this software. Cybersecurity hinges
+on a solid cyber secure culture, and humans are the core of that culture. 
+
+Whether a USB device is found in the parking lot or given as a gift, it is important
+to ensure that employees are aware of the dangers of plugging in unauthorized devices.
+Thankfully, the source of the attack was not a malicious actor, a testament to 
+Google's cyber secure culture.
+
+\section{Remote Hacking of Oldsmar's Water Treatment System}
+An interesting idea of physical security is the idea of remote physical security.
+The Oldsmar water treatment plant in Florida was hacked in February 2021. The
+attacker was able to remotely access the system
+"through a dormant software called TeamViewer" \cite{CCNFlorida}.
+Unfortunately, not much is known about the attack, and Martina Dier (a spokeswoman
+for TeamViewer) stated "Based on cooperative information sharing, a diligent technical
+investigation did not find any indication for suspicious connection activity via our
+platform" \cite{CCNFlorida}.
+
+\section{Method of Attack}
+It is believed that the attacker was able to remotely access the system through
+TeamViewer. The attacker was able to increase the amount of sodium hydroxide (lye)
+in the water from 100 parts per million to 11,100 parts per million.
 
 \section{Now You See Me 2}
 While not a real-life example, the movie Now You See Me 2 \cite{NowYouSeeMe2} presents
