@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{6}
+\begin{thebibliography}{8}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -61,9 +61,9 @@
 \tempurl}
 
 
-\bibitem[Google(2022)]%
-        {Google01}
-\bibfield{author}{\bibinfo{person}{Google}.} \bibinfo{year}{2022}\natexlab{}.
+\bibitem[Google(2022a)]%
+        {GoogleGlobeVideo}
+\bibfield{author}{\bibinfo{person}{Google}.} \bibinfo{year}{2022}\natexlab{a}.
 \newblock \bibinfo{booktitle}{\emph{EP003: Red Team | Hacking Google}}.
 \newblock YouTube.
 \newblock
@@ -73,16 +73,30 @@
 Retrieved Jan 28, 2024 from \tempurl}
 
 
-\bibitem[Google(2023)]%
-        {Google02}
-\bibfield{author}{\bibinfo{person}{Google}.} \bibinfo{year}{2023}\natexlab{}.
-\newblock \bibinfo{booktitle}{\emph{USB Keystroke Injection Protection}}.
-\newblock GitHub.
+\bibitem[Google(2022b)]%
+        {GoogleRedTeamBlog}
+\bibfield{author}{\bibinfo{person}{Google}.} \bibinfo{year}{2022}\natexlab{b}.
+\newblock \bibinfo{booktitle}{\emph{Meet the team responsible for hacking
+  Google}}.
+\newblock Google.
 \newblock
 \urldef\tempurl%
-\url{https://github.com/google/ukip}
+\url{https://blog.google/technology/safety-security/meet-the-team-responsible-for-hacking-google/}
 \showURL{%
-Retrieved Jan 28, 2024 from \tempurl}
+Retrieved Feb 11, 2024 from \tempurl}
+
+
+\bibitem[Google(2023)]%
+        {GoogleData}
+\bibfield{author}{\bibinfo{person}{Google}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Data and Security - Data Centers -
+  Google}}.
+\newblock Google Cloud.
+\newblock
+\urldef\tempurl%
+\url{https://www.google.com/about/datacenters/data-security/}
+\showURL{%
+Retrieved Feb 11, 2024 from \tempurl}
 
 
 \bibitem[Leterrier(2016)]%
@@ -98,8 +112,22 @@ Retrieved Jan 28, 2024 from \tempurl}
 \tempurl}
 
 
+\bibitem[Tech(2023)]%
+        {GoogleDataVideo}
+\bibfield{author}{\bibinfo{person}{Google~Cloud Tech}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Google Data Center Security: 6 Layers
+  Deep}}.
+\newblock Google.
+\newblock
+\urldef\tempurl%
+\url{https://youtu.be/kd33UVZhnAA}
+\showURL{%
+Retrieved Feb 11, 2024 from \tempurl}
+
+
 \bibitem[Zalewski(2012)]%
-        {lcamtuf}
+        {GoogleGlobeBlog}
 \bibfield{author}{\bibinfo{person}{Michal Zalewski}.}
   \bibinfo{year}{2012}\natexlab{}.
 \newblock \showarticletitle{The Google plasma globe affair of 2012}.

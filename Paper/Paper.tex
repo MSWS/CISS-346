@@ -1,4 +1,7 @@
 \documentclass[acmsmall]{acmart}
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
 
 \AtBeginDocument{%
   \providecommand\BibTeX{{%
@@ -11,14 +14,16 @@
 \acmJournal{TISSEC}
 \acmVolume{420}
 \acmNumber{69}
-\acmArticle{3.14}
+% \acmArticle{3.14}
 \acmMonth{1}
 
 \setcopyright{acmlicensed}
 \copyrightyear{2024}
+
 \begin{document}
 
-\title{Historic Cybersecurity Breaches Caused by a Lack of Physical Security}
+% \title{Historic Cybersecurity Breaches Caused by a Lack of Physical Security}
+\title{An investigation of times that a lack in good physical security practices led to a cyber security issue}
 
 \author{Isaac Boaz}
 \email{boazi@wwu.edu}
@@ -33,7 +38,7 @@
 \renewcommand{\shortauthors}{Boaz}
 
 \begin{abstract}
-  Cybersecurity requires many layers and aspects of security to achieved.
+  Cybersecurity involves many layers and aspects of security to be achieved.
   This article analyzes and reviews historical occurences where a lack of
   physical security lead to a lack of cybersecurity. In addition to introduction,
   an analysis and review of such occurences will be presented.
@@ -84,15 +89,17 @@
 \ccsdesc[100]{Social and professional topics~Malware / spyware crime}
 
 \maketitle
+\fancyfoot{}
+\thispagestyle{empty}
 
-\section{Introduction}
+\section{Article Introduction}
 In the world of software and programs, many people in the cybersecurity
 field focus on the security and practices used in their software and programs.
 However, one of the most well-known ideas for security is the idea that
-your security is only as strong as your weakest link. Just as electricity
+a system's security is only as strong as its weakest link. Just as electricity
 follows the path of least resistance, hackers and cybercriminals need only
-find a single weak point in your security to gain access to the rest of
-your system.
+find a single weak point in a system to gain access to the rest of
+it.
 
 Physical security is a part of cybersecurity. The act of protecting and
 securing IT assets, data, and resources from physical attacks is a part
@@ -100,7 +107,12 @@ of cybersecurity. This article will review and analyze both fictional and
 non-fictional occurences where a lack of physical security lead to a lack
 or breach of cybersecurity.
 
-\section{Basic Physical Security}
+A potential opinion of cybersecurity could fail to see (or underestimate) how
+a company's corporate culture could impact the security of the company.
+Password policies, access control, logging, and properly following
+security procedures must stem from a cybersecure-forward culture.
+
+\section{Physical Security}
 Regardless of what a device is doing, it is always important to understand
 the physical environment and security that the device is in. Even the
 best anti-virus software cannot be protected from a malicious actor
@@ -119,19 +131,39 @@ Some basic physical security practices include:
 Ultimately, physical security can be just as important and just as in-depth
 as cybersecurity.
 
-\section{Google's Plasma Globe \texorpdfstring{\cite{Google01}}{}}
-One of the best ways to test your security is by doing it yourself. Google
-went about this by creating a "Red Team", a team of white-hat hackers that
-were tasked with trying to hack Google. Though this task certainly includes
-doing software-based attacks, one of the successful attacks was actually
-a physical attack.
+\subsection{Cyber Secure Culture and Physical Security}
+The importance of a cyber secure culture cannot be understated. A company
+that does not have a cyber secure culture will not have employees that
+are aware of the dangers of social engineering, phishing, or plugging in
+unauthorized devices.
 
-\subsection{Attack}
+Employee training, security protocols, and procedures are all dependent
+on a culture that is aware, attentive, and proactive about security;
+which you can only get from a cyber secure culture.
+
+For instance, Google's Cyber Security Culture is stringent on including
+physical security, one example being how they handle their data centers \cite{GoogleData}.
+Google made a video describing the security of their centers. To emphasize why
+the culture of cyber-security is important,
+Stephanie Wong (a Google employee) admitted she "could talk all day
+about cloud security, (but)physical security (at Google) is still pretty new to me" \cite{GoogleDataVideo}.
+
+Google's Data Centers are a good example of how physical security is an important
+aspect of cybersecurity.
+
+\section{Google's Plasma Globe}
+One of the best ways to test security is by testing, verifying, and self-auditing
+how well the security system holds up. Google went about this by creating a
+"Red Team" \cite{GoogleRedTeamBlog}, a team of white-hat hackers that were tasked with trying to hack Google.
+Though this task certainly includes doing software-based attacks, one of the successful
+attacks was a physical attack.
+
+\subsection{Google's Plan of Attack}
 The Red Team designed a Plasma Globe that had a USB cable attached to it for power.
 Only five plasma globes were created with a malicious modification to them.
 The Red Team added an internal chip that would emulate a USB keyboard when plugged
-in to a computer. After approximately 5-10 minutes \cite{lcamtuf}, the device
-would quickly type out a command to download a larger payload from the internet.
+in to a computer. After approximately 5-10 minutes, the device would
+quickly type out a command to download a larger payload from the internet \cite{GoogleGlobeBlog}.
 In order to give the device to Google's employees, the Red Team disguised the
 device as an anniversary gift from Google (based off of LinkedIn).
 
@@ -140,17 +172,24 @@ Google's employees to plug it in for the attack be successful. Upon successful
 execution of the script, the Red Team had access to the employee's credentials.
 Through this, they were able to send emails to other employees which had higher
 privileges. Through these emails with attachments, the Red Team was able to
-gain access to Google's Glasses internal documentation.
+gain access to Google's Glasses internal documentation \cite{GoogleGlobeVideo}.
 
 Finally, the Red Team attempted to obtain a physical build of the Google Glasses.
 Unfortunately, due to a few typos, the Red Team caused a few red flags to be raised,
 and instead of going to pick up the build, they were met with Google's Chief Security
-Officer.
+Officer \cite{GoogleGlobeVideo}.
 
-\subsection{Analysis}
-What ultimately allowed this attack to be successful was improper training, understanding,
-and awareness of physical security. Google's employees were not trained to be aware
-of the potential dangers of plugging in a USB device was given to them.
+\subsection{Attack Analysis}
+Ultimately, this attack was a phishing attack. The Red Team was able to convince
+Google's employees to plug in a USB device that was given to them. The Red Team
+was able to gain access to Google's Glasses internal documentation by using the
+employee's credentials.
+
+Google's physical security culture did not account for the dangers of plugging in
+unauthorized devices. While Google's employees may have been aware of the dangers
+of USB devices, mistakes can happen or people can forget about security.
+Re-inforcing the importance of a cyber secure culture and the dangers of social
+engineering is important.
 
 This attack also highlights the importance of physical security. If Google employees
 were not allowed to bring in unauthorized external devices, this attack would not
@@ -211,7 +250,7 @@ CIA agents that are currently undercover. The CIA building is heavily guarded
 and has many layers of security.
 
 \subsection{Attack}
-In the movie, we are shown the many physical layers of security that the CIA
+The move shows the many physical layers of security that the CIA
 building has. The building has a security guard, a security camera, a keycard
 reader, and a physical key. Access to the NOC list is also restricted to only
 the physical computer that the NOC list is on. The server room employs many
@@ -241,8 +280,7 @@ Additionally, requiring an authorized person to be in the room to access the
 computer would be a good requirement.
 
 \section{Conclusion}
-We have seen examples of physical security and how attackers may navigate around
-it. Being aware of all potential entrypoints and the human element of security is important
+Being aware of all potential entrypoints and the human element of security is important
 to keep in mind when designing a secure system. Security exploits could stem from the
 design of a building (such as a server room being too accessible) to the training of
 its employees.
