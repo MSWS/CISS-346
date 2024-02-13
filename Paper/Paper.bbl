@@ -16,10 +16,9 @@ Google~Cloud Tech.
 \newblock Google data center security: 6 layers deep, January 2023.
 \newblock URL \url{https://youtu.be/kd33UVZhnAA}.
 
-\bibitem[Google(2022{\natexlab{a}})]{GoogleRedTeamBlog}
-Google.
-\newblock Meet the team responsible for hacking google, August
-  2022{\natexlab{a}}.
+\bibitem[Friedli(2022)]{GoogleRedTeamBlog}
+Stefan Friedli.
+\newblock Meet the team responsible for hacking google, August 2022.
 \newblock URL
   \url{https://blog.google/technology/safety-security/meet-the-team-responsible-for-hacking-google/}.
 
@@ -28,9 +27,9 @@ Michal Zalewski.
 \newblock The google plasma globe affair of 2012, October 2012.
 \newblock URL \url{https://lcamtuf.coredump.cx/plasma_globe/}.
 
-\bibitem[Google(2022{\natexlab{b}})]{GoogleGlobeVideo}
+\bibitem[Google(2022)]{GoogleGlobeVideo}
 Google.
-\newblock Ep003: Red team | hacking google, October 2022{\natexlab{b}}.
+\newblock Ep003: Red team | hacking google, October 2022.
 \newblock URL \url{https://youtu.be/TusQWn2TQxQ}.
 
 \bibitem[Google(2023{\natexlab{b}})]{GoogleUSB}
