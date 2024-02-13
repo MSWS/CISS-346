@@ -1,7 +1,8 @@
 \documentclass[acmsmall]{acmart}
+\usepackage{fancyhdr} 
+
 \settopmatter{printacmref=false} % Removes citation information below abstract
 \renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
-\pagestyle{plain} % removes running headers
 
 \AtBeginDocument{%
   \providecommand\BibTeX{{%
@@ -14,15 +15,12 @@
 \acmJournal{TISSEC}
 \acmVolume{420}
 \acmNumber{69}
-% \acmArticle{3.14}
 \acmMonth{1}
 
 \setcopyright{acmlicensed}
 \copyrightyear{2024}
 
 \begin{document}
-
-% \title{Historic Cybersecurity Breaches Caused by a Lack of Physical Security}
 \title{An investigation of times that a lack in good physical security practices led to a cyber security issue}
 
 \author{Isaac Boaz}
@@ -89,6 +87,7 @@
 \ccsdesc[100]{Social and professional topics~Malware / spyware crime}
 
 \maketitle
+
 \fancyfoot{}
 \thispagestyle{empty}
 
@@ -128,8 +127,7 @@ Some basic physical security practices include:
   \item Ensuring that all devices are up to date
 \end{itemize}
 
-Ultimately, physical security can be just as important and just as in-depth
-as cybersecurity.
+Ultimately, physical security is necessary to ensure proper cybersecurity.
 
 \subsection{Cyber Secure Culture and Physical Security}
 The importance of a cyber secure culture cannot be understated. A company
@@ -203,11 +201,11 @@ on Google's computers, and the software was publicly released \cite{GoogleUSB,Go
 
 While a software solution is a good start, it is not a complete solution. A theoretically
 slow USB device could still be used to bypass this software. Cybersecurity hinges
-on a solid cyber secure culture, and humans are the core of that culture. 
+on a solid cyber secure culture, and humans are the core of that culture.
 
 Whether a USB device is found in the parking lot or given as a gift, it is important
 to ensure that employees are aware of the dangers of plugging in unauthorized devices.
-Thankfully, the source of the attack was not a malicious actor, a testament to 
+Thankfully, the source of the attack was not a malicious actor, a testament to
 Google's cyber secure culture.
 
 \section{Remote Hacking of Oldsmar's Water Treatment System}
@@ -220,85 +218,86 @@ for TeamViewer) stated "Based on cooperative information sharing, a diligent tec
 investigation did not find any indication for suspicious connection activity via our
 platform" \cite{CCNFlorida}.
 
-\section{Method of Attack}
-It is believed that the attacker was able to remotely access the system through
-TeamViewer. The attacker was able to increase the amount of sodium hydroxide (lye)
-in the water from 100 parts per million to 11,100 parts per million.
+\subsection{Method of Attack}
+It is believed that the attacker was able to remotely access the system (supposedly)
+through TeamViewer. The attacker was able to increase the amount of sodium hydroxide (lye)
+in the water from 100 parts per million to 11,100 parts per million. Thankfully,
+the system's operator noticed the change and reverted it back to the normal levels.
 
-\section{Now You See Me 2}
-While not a real-life example, the movie Now You See Me 2 \cite{NowYouSeeMe2} presents
-a potential example of a physical security breach. In the movie, the main characters
-are able to breach a company's phone presentation by disguising as server maintenance,
-quickly convincing security that the original server maintainer was crazy, and
-installing a device that would allow them to control the presentation.
+\cite{CCNFlorida} ultimately concludes that the attack was done remotely. The
+water treatment system was outdated and not kept up-to-date to proper security
+standards. "Gualtieri said the water treatment facility currently uses a Google
+Chrome product for remote access. The Oldsmar water treatment system is also using
+the Windows 7 operating system, which was released in 2009" \cite{CCNFlorida}.
 
-\subsection{Attack}
-While very entertaining, the attack in the movie is not entirely realistic. Quick uniform
-changes and pretending that you belong was presented to seem entirely plausible. Regardless,
-the important parts of the attack were that the server room was easily accessible by all staff
-with only one layer of security. The single layer was a wired door that was left open
-by the original server maintainer.
+\subsection{Attack Analysis}
+The allowance of remote access to Oldsmar's water treatment system was a major
+security concern. A lack of proper security standards and outdated software
+contributed to the attack being successful \cite{CCNFlorida}. A cyber secure-forward
+culture would have ensured that any remote access was authenticated, validated,
+logged, and audited.
 
-Once the main character was in the server room disguised, he took a portable camera that could
-immediately print out a picture and pretended that it was "picture day" for the maintainer.
-The maintainer was not fooled by the lies, however, he was too confused and insisted that the
-character should not be there. Regardless, The main character printed out the picture and
-placed it on a badge for a mental facility.
+Physical elements of a cyber secure culture could include requiring a physical
+security key, VPN, or timed access to the system. The Hill \cite{HillArticle}
+admits that "Unfortunately, that water treatment facility is the rule rather than
+the exception. When an organization is struggling to make payroll and to keep systems
+on a generation of technology created in the last decade, even the basics in cybersecurity
+often are out of reach."
 
-Upon calling for security, the main character was able to convince the security that the
-maintainer was crazy and that he was the real maintainer. The main character was then able
-to install a device that would allow him to control the presentation.
+Ultimately a cyber secure culture needs to take into account maintenance and
+upkeep of the physical systems.
 
-\subsection{Analysis}
-This attack was successful because of a lack of physical security. The server room was
-easily accessible by all staff and only had a single layer of security. The maintainer
-also left the door open, allowing the main character to easily enter the room.
-With no physical keycard, identification, or other security, the main character was
-able to easily enter the room.
+\subsection{Mitigation and Response}
+A follow-up article by CyberScoop \cite{CyberScoop} reveals that it may not have
+been a cyber-attack at all, and that it could have been an unintentional action by an
+employee.
 
-\subsection{Mitigation}
-Ideally, the server room would have had a physical keycard, identification, or other
-security that would have prevented the main character from entering the room. The
-maintainer should have also locked the door behind him, preventing the main character
-from entering the room. Lastly, ideally the security guards would have been trained
-to be aware of social engineering and to not be easily convinced by lies.
+"The FBI concluded there was nothing, no evidence of any access from the outside,
+and that it was likely the same employee that was purported to be a hero for catching
+it, was actually banging on his keyboard" \cite{CyberScoop}.
 
-\section{Mission Impossible \texorpdfstring{\cite{missionimpossible}}{}}
-A more realistic example of a physical security breach is in the movie
-Mission Impossible. In the movie, Ethan Hunt (played by Tom Cruise) is tasked
-with stealing the NOC list from a CIA building. The NOC list is a list of all
-CIA agents that are currently undercover. The CIA building is heavily guarded
-and has many layers of security.
+Even though this may not have been an actual outsider attack, the potential was certainly
+still present. According to \cite{CyberScoop}, "a data leak containing the email
+addresses and passwords with two domains belonging to Oldsmar surfaced days before the
+breach occurred".
 
-\subsection{Attack}
-The move shows the many physical layers of security that the CIA
-building has. The building has a security guard, a security camera, a keycard
-reader, and a physical key. Access to the NOC list is also restricted to only
-the physical computer that the NOC list is on. The server room employs many
-measures and monitors to prevent unauthorized access.
+With a lack of proper financial resoruces, it is difficult to ensure that the
+water treatment system is up-to-date and secure.
 
-Specifically, the server room has pressure-sensitive floors, a temperature monitor,
-sound sensor, and lasers above the ventilation system. All of these measures are disabled
-while an authorized person is in the room, and re-enabled when they leave.
+Another interesting perspective of cyber security culture is how it relates to
+federal and public policy. The Biden Administration is slowly making progress
+to have cyber-security requirements, and the Environmental Protection Agency released
+a mandate for public water systems to "evaluate the adequacy" of any digital defenses
+through sanitation surveys \cite{CyberScoopEPA}.
 
-Ethan Hunt goes through the ventilation system, uses a mirror to reflect the
-lasers, and is slowly lowered to the floor by a wire. He then hacks into the
-computer and steals the NOC list.
+\section{Credit Card Skimmers}
+An interesting example of a physical security breach is the use of credit card skimmers.
+Credit card skimmers are devices that are placed on top of a credit card reader that
+are able to read and store the information of a credit card. The skimmer is then
+retrieved by the attacker and the information is used to make unauthorized purchases \cite{FBISkimming}.
 
-\subsection{Analysis}
-Here we can see that the CIA building has many layers of physical security.
-Despite all of these layers, Ethan Hunt was still able to breach the security.
-Unfortunately, the CIA building failed to account for plot armor, which is
-a classic mistake in the field of cybersecurity.
+While not be a direct physical security breach, the use of credit card skimmers
+is directly related to cyber security, as credit card information can be viewed
+as a form of digital information.
 
-\subsection{Mitigation}
-Realistically, the CIA building should have had a more secure ventilation system;
-we see that the team was able to get into the ventilation system (and the building itself)
-by disguising as firefighers. The CIA did not have proper protocols or procedures
-for fire alarms or drills, which allowed the team to easily enter the building.
+Though the mindset and knowledge of card skimming may not wholly be a part of a
+cyber secure culture, being aware of the current dangers and threats is important
+to a cyber secure culture. Customers, credit card companies, and businesses all
+need to be aware of the dangers of credit card skimmers.
 
-Additionally, requiring an authorized person to be in the room to access the
-computer would be a good requirement.
+In one instance, six people were arrested and charged with using credit card skimmers
+to steal over \$5 million dollars from credit unions and banks \cite{FBISkimming}.
+This provides a critical reminder for the importance of physical security when it comes
+to cybersecurity. No matter how secure the software of an ATM is, a credit card skimmer
+can still be placed on top of it.
+
+\subsection{The Culture of Credit Card Skimming}
+While the typical scope of a security culture may be based off of a company's
+policies, executives, and employees, cultures are not limited to just companies.
+The cyber-secure culture of a city, state, or country can also be evaluated,
+analyzed, and improved. The Federal Bureau of Investigation (FBI) has a page
+dedicated to credit card skimming, and the FBI is working to educate the public
+about the dangers of credit card skimming \cite{FBISkimming}.
 
 \section{Conclusion}
 Being aware of all potential entrypoints and the human element of security is important
@@ -310,15 +309,10 @@ Ensuring that all employees are trained to be aware of physical security and the
 of social engineering is important. Additionally, ensuring that all employees are trained
 to be aware of the dangers of plugging in unauthorized devices is important. Having properly
 defined protocols and procedures for unlikely events is also important.
-Companies should internally test their security- GitLab for example similarly has a
+Companies should internally test their security- GitLab for example (similar to Google) has a
 "Red Team" that is tasked with trying to hack GitLab \cite{GitLab}.
 
-\begin{acks}
-  I would like to thank Google for their Plasma Globe attack, and the creators of
-  Mission Impossible for their interesting portrayal of physical security.
-\end{acks}
-
-\bibliographystyle{ACM-Reference-Format}
+\bibliographystyle{unsrtnat}
 \bibliography{bib}
 \end{document}
 \endinput
