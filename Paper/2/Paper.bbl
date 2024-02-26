@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{23}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -120,10 +120,20 @@ Ax~Sharma.
 \newblock URL
   \url{https://www.bleepingcomputer.com/news/security/everything-blocks-devs-from-removing-their-own-npm-packages/}.
 
-\bibitem[Koçulu(2016)]{medium-azer}
+\bibitem[uncenter(2024)]{uncenter-blog-everything}
+uncenter.
+\newblock The package that broke npm (accidentally), January 2024.
+\newblock URL \url{https://uncenter.dev/posts/npm-install-everything/}.
+
+\bibitem[Koçulu(2016)]{appendix-medium-azer}
 Azer Koçulu.
 \newblock I've just liberated my modules, March 2016.
 \newblock URL
   \url{https://web.archive.org/web/20160323000000/https://medium.com/@azerbike/i-ve-just-liberated-my-modules-9045c06be67c#.5g9x9r23t}.
+
+\bibitem[PatrickJS(2024)]{appendix-everything-website}
+PatrickJS.
+\newblock npm i everything, January 2024.
+\newblock URL \url{https://everything.npm.lol/}.
 
 \end{thebibliography}

@@ -25,9 +25,9 @@
 \renewcommand{\shortauthors}{Boaz}
 
 \begin{abstract}
-  npm (Node Package Manager) is a popular package manager owned by Microsoft that allows developers
+  npm (Node Package Manager) is a popular package manager owned by GitHub that allows developers
   to share node packages and libraries. This article will review and analyze the design flaw of npm
-  and how it was broken by a single package. This article will also review how Microsoft responded to
+  and how it was broken by a single package. This article will also review how GitHub responded to
   the incident and what actions they took to prevent it from happening again.
 \end{abstract}
 
@@ -36,44 +36,56 @@
 \begin{CCSXML}
   <ccs2012>
   <concept>
-  <concept_id>10003456.10003462.10003561.10003563</concept_id>
-  <concept_desc>Social and professional topics~Network access restrictions</concept_desc>
+  <concept_id>10011007.10011074.10011134</concept_id>
+  <concept_desc>Software and its engineering~Collaboration in software development</concept_desc>
+  <concept_significance>500</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10003456.10003462.10003463</concept_id>
+  <concept_desc>Social and professional topics~Intellectual property</concept_desc>
+  <concept_significance>100</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10003456.10003457.10003490.10003491.10003495</concept_id>
+  <concept_desc>Social and professional topics~Systems analysis and design</concept_desc>
   <concept_significance>300</concept_significance>
   </concept>
   <concept>
-  <concept_id>10003456.10003462.10003561.10003566</concept_id>
-  <concept_desc>Social and professional topics~Universal access</concept_desc>
+  <concept_id>10003456.10003457.10003490.10003491.10003492</concept_id>
+  <concept_desc>Social and professional topics~Project management techniques</concept_desc>
+  <concept_significance>300</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10003456.10003457.10003490.10003491.10003496</concept_id>
+  <concept_desc>Social and professional topics~Systems development</concept_desc>
   <concept_significance>100</concept_significance>
   </concept>
   <concept>
-  <concept_id>10003456.10003462.10003574.10003000</concept_id>
-  <concept_desc>Social and professional topics~Social engineering attacks</concept_desc>
-  <concept_significance>500</concept_significance>
+  <concept_id>10003456.10003457.10003490.10003503</concept_id>
+  <concept_desc>Social and professional topics~Software management</concept_desc>
+  <concept_significance>300</concept_significance>
   </concept>
   <concept>
-  <concept_id>10003456.10003462.10003574.10003578</concept_id>
-  <concept_desc>Social and professional topics~Malware / spyware crime</concept_desc>
-  <concept_significance>100</concept_significance>
+  <concept_id>10003456.10003457.10003490.10003507.10003508</concept_id>
+  <concept_desc>Social and professional topics~Centralization / decentralization</concept_desc>
+  <concept_significance>300</concept_significance>
   </concept>
   <concept>
-  <concept_id>10002978.10002991</concept_id>
-  <concept_desc>Security and privacy~Security services</concept_desc>
-  <concept_significance>500</concept_significance>
-  </concept>
-  <concept>
-  <concept_id>10002978.10003006</concept_id>
-  <concept_desc>Security and privacy~Systems security</concept_desc>
+  <concept_id>10003456.10003457.10003490.10003507.10003509</concept_id>
+  <concept_desc>Social and professional topics~Technology audits</concept_desc>
   <concept_significance>500</concept_significance>
   </concept>
   </ccs2012>
 \end{CCSXML}
 
-\ccsdesc[500]{Security and privacy~Security services}
-\ccsdesc[500]{Security and privacy~Systems security}
-\ccsdesc[300]{Social and professional topics~Network access restrictions}
-\ccsdesc[500]{Social and professional topics~Social engineering attacks}
-\ccsdesc[100]{Social and professional topics~Universal access}
-\ccsdesc[100]{Social and professional topics~Malware / spyware crime}
+\ccsdesc[500]{Software and its engineering~Collaboration in software development}
+\ccsdesc[100]{Social and professional topics~Intellectual property}
+\ccsdesc[300]{Social and professional topics~Systems analysis and design}
+\ccsdesc[300]{Social and professional topics~Project management techniques}
+\ccsdesc[100]{Social and professional topics~Systems development}
+\ccsdesc[300]{Social and professional topics~Software management}
+\ccsdesc[300]{Social and professional topics~Centralization / decentralization}
+\ccsdesc[500]{Social and professional topics~Technology audits}
 
 \maketitle
 
@@ -151,11 +163,13 @@ However, these new policies lead towards a new design flaw.
 
 \section{The everything package}
 \subsection{Everything's Creation}
-In 2023, a developer by the name PatrickJS decided to work on a package called `everything'.
-He teamed up with Evan Boehs, another developer to work on creating an npm package that
-would declare every single package in the npm registry as a dependency. This invovled
-working around some obscure npm limitations, such as the maximum number of dependencies
-being around 800 \cite{youtube-everything}, and the maxiumum package size being 10 MB \cite{youtube-everything}.
+In December 2023, a developer by the name PatrickJS decided to work on a package
+called `everything'. He teamed up with Evan Boehs, another developer to work on
+creating an npm package that would declare every single package in the npm
+registry as a dependency. This invovled working around some obscure npm
+limitations, such as the maximum number of dependencies being around 800
+\cite{youtube-everything}, and the maxiumum package size being 10 MB
+\cite{youtube-everything}.
 
 In order to work around these limitations, PatrickJS and Evan Boehs decided to chunk their
 dependencies into smaller packages \lstinline|@everything-registry/chunk-0| through to \\
@@ -199,22 +213,108 @@ installs them lazily, on-the-fly. this change is practically seamless - simply
 reach for the utility like you would normally and hoarders will do the rest! the
 only requirements are npm and an internet connection.' \cite{github-hoarders}
 
-\subsection{Response}
+\subsection{Developer's Response}
 PatrickJS and Evan Boehs weren't aware of the consequences of their actions
 until they realized that they had broken the npm registry
 \cite{youtube-everything}. They reached out to npm and created an issue on the
 GitHub repository documenting and explaining the issue
 \cite{bleepingcomputer-everything}.
 
-\section{Microsoft's Response}
+uncenter, a developer who assisted in the creation of the `everything' package,
+wrote:
 
+`We immediately reached out to GitHub; Patrick used his network and contacts to
+speak to people at GitHub, and we sent multiple emails to the support and
+security teams on NPM. Unfortunately, these events transpired over the holidays
+and the NPM/GitHub teams were not responding (likely out of the office). We
+continued to get harsh and rude comments from random people with a little too
+much time on their hands... one person even wrote a 1400 word rant about the
+unpublishing issue, despite us repeatedly telling them we could do nothing
+further' \cite{uncenter-blog-everything}.
+
+\section{GitHub's Response}
+Due to this happening over the holidays, it was only until the end of day on Jan
+2, 2024 that GitHub reached out to the developers and notified them that they
+were aware of the problem \cite{uncenter-blog-everything}. The next day (Jan 3rd),
+GitHub flagged the repository and began removing the packages on npm.
+
+\subsection{Review}
+On Jan 4th, GitHub sent a follow-up email to the developers classifying the
+project as against their terms of service, and that they would be removing the
+repository \cite{uncenter-blog-everything}. GitHub removed the repository and
+packages from npm.
+
+\section{Design Flaw Analysis}
+The `everything' incident exposed a fundamental flaw: npm's design allows
+developers to create packages that depend on every other package in the registry,
+or a large number of packages.
+
+\subsection{Proposed Solutions}
+There have been a few proposed solutions to the design flaw of npm.
+It appears that GitHub does not have any immediate plans to change their
+policies judging by their response to the `everything' package incident.
+
+\subsubsection{uncenter} proposes `NPM should either a) prevent folks from
+publishing packages with star versions in the package.json entirely, or b) don't
+consider a dependent of a package if it uses a star version when tallying how
+many packages depend on a package for unpublishing.' \cite{uncenter-blog-everything}.
+
+\subsubsection{PatrickJS} proposes `A) allow folks to unpublish when the
+packages that depend on them use a "star" version, B) not permit star versions
+in published packages going forward' \cite{bleepingcomputer-everything}
+
+At its core, this is a fundamental design flaw of npm. The npm registry is
+designed to be a public registry, and as such, it is difficult to prevent
+developers from creating packages that depend on every other package in the
+registry. This is a problem that is difficult to solve without fundamentally
+changing the design of the npm registry.
+
+\subsection{Other Potential Solutions}
+\subsubsection{Rate Limiting}
+One potential solution to this problem is to rate limit the number of packages
+that a single package can depend on. This would prevent developers from creating
+packages that depend on every other package in the registry.
+
+\subsubsection{Dependency Analysis}
+Another potential solution is to analyze the dependencies of a package before
+allowing it to be published. If a package depends on every other package in the
+registry, it could be flagged for review by the npm team.
+
+\subsubsection{Unpublishing Policies}
+The unpublishing policies that npm put in place after the left-pad incident
+were designed to prevent a similar incident from happening again. However, they
+ended up creating a new design flaw that was exploited by the `everything'
+package. npm could consider revising these policies to prevent a similar
+incident from happening in the future.
+
+\subsubsection{Review Process}
+npm could also consider implementing a review process for new packages that are
+published to the registry and contain a large number of dependencies. This would
+allow the npm team to catch packages like `everything' before they are published
+to the registry.
+
+\section{Conclusion}
+The `everything' package incident was a catastrophic failure that was not
+intended by the developers of the package. It was the result of a design flaw in
+the npm registry. The incident highlights the need for better security and
+reliability in the npm registry, and the need for better policies to prevent
+similar incidents from happening in the future.
+
+\section{Acknowledgements}
+I would like to thank Theo Browne for introducing this recent incident to me
+by the form of a YouTube video \cite{youtube-everything}. I would also like to
+thank the developers of the `everything' package for sharing their story and
+providing valuable insights into the incident.
 
 \bibliographystyle{unsrtnat}
 \bibliography{bib}
 
 \appendix
-\section{Reading Resources}
-Azer Koçulu himself wrote a blog post about the incident, which can be found at \cite{medium-azer}.
+\section{Appendix: Reading Resources}
+\begin{itemize}
+  \item Azer Koçulu himself wrote a blog post about the incident, which can be found at \cite{appendix-medium-azer}.
+  \item The everything team created a website advertising the package, which can be found at \cite{appendix-everything-website}.
+\end{itemize}
 
 \end{document}
 \endinput
