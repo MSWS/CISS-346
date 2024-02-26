@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{25}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -72,6 +72,17 @@ npm.
 \newblock npm unpublish policy, January 2023{\natexlab{a}}.
 \newblock URL \url{https://docs.npmjs.com/policies/unpublish}.
 
+\bibitem[uncenter(2024)]{uncenter-blog-everything}
+uncenter.
+\newblock The package that broke npm (accidentally), January 2024.
+\newblock URL \url{https://uncenter.dev/posts/npm-install-everything/}.
+
+\bibitem[Silverio(2017)]{npm-ratelimiting}
+Ceej Silverio.
+\newblock Api rate limiting rolling out, August 2017.
+\newblock URL
+  \url{https://blog.npmjs.org/post/164799520460/api-rate-limiting-rolling-out.html}.
+
 \bibitem[PatrickJS(2023)]{npm-everything}
 PatrickJS.
 \newblock everything - npm, December 2023.
@@ -97,8 +108,7 @@ npm.
 Feross Aboukhadijeh.
 \newblock When "everything" becomes too much: The npm package chaos of 2024,
   January 2024.
-\newblock URL
-  \url{https://socket.ist/posts/when-everything-becomes-too-much-the-npm-package-chaos-of-2024}.
+\newblock URL \url{https://socket.dev/blog/when-everything-becomes-too-much}.
 
 \bibitem[Holbrook(2022{\natexlab{a}})]{github-hoarders-dependencies}
 Josh Holbrook.
@@ -120,10 +130,10 @@ Ax~Sharma.
 \newblock URL
   \url{https://www.bleepingcomputer.com/news/security/everything-blocks-devs-from-removing-their-own-npm-packages/}.
 
-\bibitem[uncenter(2024)]{uncenter-blog-everything}
-uncenter.
-\newblock The package that broke npm (accidentally), January 2024.
-\newblock URL \url{https://uncenter.dev/posts/npm-install-everything/}.
+\bibitem[npm(2023{\natexlab{c}})]{npm-tos}
+npm.
+\newblock npm terms of service, December 2023{\natexlab{c}}.
+\newblock URL \url{https://docs.npmjs.com/policies/terms}.
 
 \bibitem[Koçulu(2016)]{appendix-medium-azer}
 Azer Koçulu.
