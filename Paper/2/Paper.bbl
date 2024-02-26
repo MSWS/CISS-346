@@ -1,4 +1,4 @@
-\begin{thebibliography}{20}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -102,7 +102,7 @@ Feross Aboukhadijeh.
 
 \bibitem[Holbrook(2022{\natexlab{a}})]{github-hoarders-dependencies}
 Josh Holbrook.
-\newblock hoarders/package.json at f0172e83540c868621d1f67832493ca4f7add3f2
+\newblock hoarders/package.json at f0172e83540c868621d1f67832493ca4f7add3f2 ·
   jfhbrook/hoarders, June 2022{\natexlab{a}}.
 \newblock URL
   \url{https://github.com/jfhbrook/hoarders/blob/f0172e83540c868621d1f67832493ca4f7add3f2/package.json}.
@@ -112,6 +112,13 @@ Josh Holbrook.
 \newblock jfhbrook/hoarders: node.js's most complete "utility grab-bag".
   dedicated to substack., March 2022{\natexlab{b}}.
 \newblock URL \url{https://github.com/jfhbrook/hoarders}.
+
+\bibitem[Sharma(2024)]{bleepingcomputer-everything}
+Ax~Sharma.
+\newblock 'everything' blocks devs from removing their own npm packages,
+  January 2024.
+\newblock URL
+  \url{https://www.bleepingcomputer.com/news/security/everything-blocks-devs-from-removing-their-own-npm-packages/}.
 
 \bibitem[Koçulu(2016)]{medium-azer}
 Azer Koçulu.

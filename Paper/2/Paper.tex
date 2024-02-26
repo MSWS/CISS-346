@@ -167,18 +167,19 @@ PatrickJS and Evan Boehs used a GitHub Action workflow to publish the packages \
 
 \subsection{The Aftermath}
 Upon publishing of the `everything' package in Dec 2023 \cite{npm-everything},
-PatrickJS and Evan Boehs had (unintentionally) disabled unpublishing every package ever on
-the npm registry \cite{youtube-everything}. This was an unforseen consequence of the new
-unpublishing policies that npm had put in place after the left-pad incident. Namely,
-\textit{every package was now a dependency of the `everything' package},
-and thus, could not be unpublushed, regardless of age. \lstinline|everything| itself could
-not be removed, as it had one dependency: \lstinline|everything-else| \cite{npm-everything-else}.
+PatrickJS and Evan Boehs had (unintentionally) disabled unpublishing every
+package ever on the npm registry \cite{youtube-everything}. This was an
+unforseen consequence of the new unpublishing policies that npm had put in place
+after the left-pad incident. Namely, \textit{every package was now a dependency
+  of the `everything' package}, and thus, could not be unpublushed, regardless of
+age. \lstinline|everything| itself could not be removed, as it had one
+dependency: \lstinline|everything-else| \cite{npm-everything-else}.
 
 This was also caused by the fact that the `everything' package depended on a `*' version
 of all of its packages, which meant that it matched any version of each of its packages.
 
 \subsection{Historic Related Incidents}
-npm was not a strange to packages and projects before `everything'.
+npm was not a stranger to packages and projects before `everything'.
 
 \subsubsection{no-one-left-behind}
 was an npm package that was created in 2018 that similarly depended
@@ -187,11 +188,25 @@ the package before it caused significant damage \cite{npm-no-one-left-behind-sec
 It was then re-uploaded under a different name, this time with 33,000 dependencies \cite{socket-everything}.
 
 \subsubsection{hoarders}
-was a package that was created near the early conception of npm (2012) that also depended
-on 11,000 packages at its inception \cite{github-hoarders-dependencies}. Isaac Schluter (
-the founder of npm) talked with the creator of the package and convinced him to unpublish it
-\cite{github-hoarders}.  A few years later in Aug 19, 2021
+was a package created by Josh Holbrook that was created near the conception of npm (2012) that
+also depended on 11,000 packages at its inception \cite{github-hoarders-dependencies}.
+Isaac Schluter (the founder of npm) talked with the creator of the package and convinced
+him to unpublish it \cite{github-hoarders}.  A few years later in Aug 19, 2021, Josh Holbrook
+found a way to work around having a heavy load on npm.
 
+`now, rather than installing the utilities as direct dependencies, hoarders
+installs them lazily, on-the-fly. this change is practically seamless - simply
+reach for the utility like you would normally and hoarders will do the rest! the
+only requirements are npm and an internet connection.' \cite{github-hoarders}
+
+\subsection{Response}
+PatrickJS and Evan Boehs weren't aware of the consequences of their actions
+until they realized that they had broken the npm registry
+\cite{youtube-everything}. They reached out to npm and created an issue on the
+GitHub repository documenting and explaining the issue
+\cite{bleepingcomputer-everything}.
+
+\section{Microsoft's Response}
 
 
 \bibliographystyle{unsrtnat}
