@@ -1,0 +1,205 @@
+\documentclass[acmsmall]{acmart}
+\usepackage{fancyhdr} 
+\usepackage{listings}
+
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\begin{document}
+\title{The design flaw of npm and how `everything' broke it}
+
+\author{Isaac Boaz}
+\email{boazi@wwu.edu}
+\email{isaac.k.boaz@gmail.com}
+\affiliation{%
+  \institution{Western Washington University}
+  \city{Seattle}
+  \state{Washington}
+  \country{USA}
+}
+
+\renewcommand{\shortauthors}{Boaz}
+
+\begin{abstract}
+  npm (Node Package Manager) is a popular package manager owned by Microsoft that allows developers
+  to share node packages and libraries. This article will review and analyze the design flaw of npm
+  and how it was broken by a single package. This article will also review how Microsoft responded to
+  the incident and what actions they took to prevent it from happening again.
+\end{abstract}
+
+\keywords{npm, design flaws, everything, left-pad}
+
+\begin{CCSXML}
+  <ccs2012>
+  <concept>
+  <concept_id>10003456.10003462.10003561.10003563</concept_id>
+  <concept_desc>Social and professional topics~Network access restrictions</concept_desc>
+  <concept_significance>300</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10003456.10003462.10003561.10003566</concept_id>
+  <concept_desc>Social and professional topics~Universal access</concept_desc>
+  <concept_significance>100</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10003456.10003462.10003574.10003000</concept_id>
+  <concept_desc>Social and professional topics~Social engineering attacks</concept_desc>
+  <concept_significance>500</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10003456.10003462.10003574.10003578</concept_id>
+  <concept_desc>Social and professional topics~Malware / spyware crime</concept_desc>
+  <concept_significance>100</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10002978.10002991</concept_id>
+  <concept_desc>Security and privacy~Security services</concept_desc>
+  <concept_significance>500</concept_significance>
+  </concept>
+  <concept>
+  <concept_id>10002978.10003006</concept_id>
+  <concept_desc>Security and privacy~Systems security</concept_desc>
+  <concept_significance>500</concept_significance>
+  </concept>
+  </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Security and privacy~Security services}
+\ccsdesc[500]{Security and privacy~Systems security}
+\ccsdesc[300]{Social and professional topics~Network access restrictions}
+\ccsdesc[500]{Social and professional topics~Social engineering attacks}
+\ccsdesc[100]{Social and professional topics~Universal access}
+\ccsdesc[100]{Social and professional topics~Malware / spyware crime}
+
+\maketitle
+
+\fancyfoot{}
+\thispagestyle{empty}
+
+\section{Article Introduction}
+Design flaws in software can sometimes lead to security breaches. More often than
+not, it is these types of breaches that are the most popularized. However, sometimes
+a design flaw can lead to a catastrophic failure that was not even intended
+(or initiated) by a bad actor.
+With over 1.3 million packages as of April 14th, 2021 \cite{npmblog-stats}, npm is
+the world's largest software registry \cite{aboutnpm,w3schools}. As a
+result, it has been heavily relied upon by developers for years.
+
+Needless to say, the npm registry is a critical piece of infrastructure for the
+entire JavaScript community (and by extension 99\% of websites \cite{w3techs}). Developers
+expected that the npm registry would be reliable, secure, and complete. However, the
+left-pad incident in 2016 \cite{npmblog-leftpad} and the everything package incident
+in 2023 \cite{youtube-everything} have shown that the npm registry is not as reliable
+as developers had hoped.
+
+\section{Historical Background}
+\subsection{Introduction}
+One of the most infamous events in the history of npm was the left-pad incident.
+Azer Koçulu is a software developer who was working on a personal project called
+kik \cite{qz}. Coincidentally, Kik was also the name of a company in
+Ontario, Canada \cite{qz, crunchbase}. The company reached out to Koçulu
+requesting that he change the name of his project. Koçulu refused, and the company
+proceeded to file a complaint with npm \cite{qz}. npm then decided to transfer the name
+kik to the company, which caused Koçulu to remove all of his packages from the
+npm registry, stating
+
+"I want all my modules to be deleted including my account, along with this package.
+I don't wanna be a part of NPM anymore. If you don't do it, let me know how do it quickly.
+I think I have the right of deleting all my stuff from NPM." \cite{medium-mikeroberts}
+
+\subsection{The left-pad package}
+As a result of Koçulu's deciscion, all of his packages (including left-pad) were removed
+from the npm registry. Despite being only 17 lines of code \cite{github-leftpad-code},
+millions of packages relied on left-pad \cite{github-leftpad-dependency}. As a result,
+many packages that directly or indirectly relied on left-pad broke, including React,
+Babel, and Atom.
+
+After an attempt to publish left-pad under a new version failed (due to some major
+dependencies relying on the old version specificially, which was no longer available),
+npm resulted to restoring the package from a backup \cite{npmblog-leftpad}. The total
+downtime taken to restore the backup was 2.5 hours \cite{npmblog-leftpad}.
+
+With the first ever unprecedented un-unpublishing of a package, npm was able to restore
+the left-pad package and the packages that relied on it.
+
+\subsection{Mitigation and Prevention}
+Once the left-pad incident was resolved, npm published a blog post detailing the
+incident and the steps they planned to take to prevent it from happening again \cite{npmblog-leftpad}.
+
+`We will make it harder to un-publish a version of a package if doing so would break other packages.
+We are still fleshing out the technical details of how this will work. Like any registry change,
+we will of course take our time to consider and implement it with care.' \cite{npmblog-leftpad}
+
+npm ended up enacting two policies relating to unpublishing packages. The first policy applied on
+packages that were less than 72 hours old, allowing unpublishing as long as `no other packages
+in the npm Public Registry depend on your package' \cite{npm-docs-unpublishing}.
+
+The second policy applied to packages that were older than 72 hours, allowing unpublishing as long
+as three conditions were met \cite{npm-docs-unpublishing}:
+\begin{enumerate}
+  \item no other packages in the npm Public Registry depend on it
+  \item it had less than 300 downloads over the last week
+  \item it has a single owner/maintainer
+\end{enumerate}
+
+With these new policies in place, npm hoped to prevent a similar incident from happening again.
+However, these new policies lead towards a new design flaw.
+
+\section{The everything package}
+\subsection{Everything's Creation}
+In 2023, a developer by the name PatrickJS decided to work on a package called `everything'.
+He teamed up with Evan Boehs, another developer to work on creating an npm package that
+would declare every single package in the npm registry as a dependency. This invovled
+working around some obscure npm limitations, such as the maximum number of dependencies
+being around 800 \cite{youtube-everything}, and the maxiumum package size being 10 MB \cite{youtube-everything}.
+
+In order to work around these limitations, PatrickJS and Evan Boehs decided to chunk their
+dependencies into smaller packages \lstinline|@everything-registry/chunk-0| through to \\
+\lstinline|@everything-registry/chunk-4|. At the time there was approximately 2.5 million
+packages in the npm registry \cite{youtube-everything}, so sub-chunking was also required.
+
+Unsurprisingly, npm also has a rate limit on how quickly packages can be published. Thus,
+PatrickJS and Evan Boehs used a GitHub Action workflow to publish the packages \cite{youtube-everything}.
+
+\subsection{The Aftermath}
+Upon publishing of the `everything' package in Dec 2023 \cite{npm-everything},
+PatrickJS and Evan Boehs had (unintentionally) disabled unpublishing every package ever on
+the npm registry \cite{youtube-everything}. This was an unforseen consequence of the new
+unpublishing policies that npm had put in place after the left-pad incident. Namely,
+\textit{every package was now a dependency of the `everything' package},
+and thus, could not be unpublushed, regardless of age. \lstinline|everything| itself could
+not be removed, as it had one dependency: \lstinline|everything-else| \cite{npm-everything-else}.
+
+This was also caused by the fact that the `everything' package depended on a `*' version
+of all of its packages, which meant that it matched any version of each of its packages.
+
+\subsection{Historic Related Incidents}
+npm was not a strange to packages and projects before `everything'.
+
+\subsubsection{no-one-left-behind}
+was an npm package that was created in 2018 that similarly depended
+on 1,000 npm packages \cite{npm-no-one-left-behind-dependencies}. npm managed to remove
+the package before it caused significant damage \cite{npm-no-one-left-behind-security}.
+It was then re-uploaded under a different name, this time with 33,000 dependencies \cite{socket-everything}.
+
+\subsubsection{hoarders}
+was a package that was created near the early conception of npm (2012) that also depended
+on 11,000 packages at its inception \cite{github-hoarders-dependencies}. Isaac Schluter (
+the founder of npm) talked with the creator of the package and convinced him to unpublish it
+\cite{github-hoarders}.  A few years later in Aug 19, 2021
+
+
+
+\bibliographystyle{unsrtnat}
+\bibliography{bib}
+
+\appendix
+\section{Reading Resources}
+Azer Koçulu himself wrote a blog post about the incident, which can be found at \cite{medium-azer}.
+
+\end{document}
+\endinput

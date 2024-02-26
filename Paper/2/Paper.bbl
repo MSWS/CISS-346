@@ -1,0 +1,122 @@
+\begin{thebibliography}{20}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Nassri(2020)]{npmblog-stats}
+Ahmad Nassri.
+\newblock So long, and thanks for all the packages!, April 2020.
+\newblock URL
+  \url{https://blog.npmjs.org/post/615388323067854848/so-long-and-thanks-for-all-the-packages}.
+
+\bibitem[Karrys and Thomson(2023)]{aboutnpm}
+Luke Karrys and Edward Thomson.
+\newblock About npm, October 2023.
+\newblock URL \url{https://docs.npmjs.com/about-npm}.
+
+\bibitem[w3schools(2023)]{w3schools}
+w3schools.
+\newblock What is npm?, January 2023.
+\newblock URL \url{https://www.w3schools.com/whatis/whatis_npm.asp}.
+
+\bibitem[w3techs(2024)]{w3techs}
+w3techs.
+\newblock Usage statistics of javascript as client-side programming language on
+  websites, February 2024.
+\newblock URL \url{https://w3techs.com/technologies/details/cp-javascript}.
+
+\bibitem[Schlueter(2016)]{npmblog-leftpad}
+Isaac Schlueter.
+\newblock Kik, left-pad, and npm, March 2016.
+\newblock URL
+  \url{https://blog.npmjs.org/post/141577284765/kik-left-pad-and-npm}.
+
+\bibitem[Browne(2024)]{youtube-everything}
+Theo Browne.
+\newblock How one command broke npm, January 2024.
+\newblock URL \url{https://youtu.be/IzqtWTMFv9Y}.
+
+\bibitem[Collins(2016)]{qz}
+Keith Collins.
+\newblock How one programmer broke the internet by deleting a tiny piece of
+  code, March 2016.
+\newblock URL
+  \url{https://qz.com/646467/how-one-programmer-broke-the-internet-by-deleting-a-tiny-piece-of-code/}.
+
+\bibitem[Crunchbase(2024)]{crunchbase}
+Crunchbase.
+\newblock Kik - crunchbase company profile \& funding, February 2024.
+\newblock URL \url{https://www.crunchbase.com/organization/kik-interactive}.
+
+\bibitem[Roberts(2016)]{medium-mikeroberts}
+Mike Roberts.
+\newblock A discussion about the breaking of the internet, March 2016.
+\newblock URL
+  \url{https://web.archive.org/web/20160324000044/https://medium.com/@mproberts/a-discussion-about-the-breaking-of-the-internet-3d4d2a83aa4d#.rv5x9r23t}.
+
+\bibitem[Koçulu(2014)]{github-leftpad-code}
+Azer Koçulu.
+\newblock left-pad, August 2014.
+\newblock URL
+  \url{https://github.com/left-pad/left-pad/blob/192444bbe670b3e429164ba0a5808e05f7ca5af4/index.js}.
+
+\bibitem[et~al.(2019)]{github-leftpad-dependency}
+Azer~Koçulu et~al.
+\newblock left-pad, May 2019.
+\newblock URL \url{https://github.com/left-pad/left-pad/network/dependents}.
+
+\bibitem[npm(2023{\natexlab{a}})]{npm-docs-unpublishing}
+npm.
+\newblock npm unpublish policy, January 2023{\natexlab{a}}.
+\newblock URL \url{https://docs.npmjs.com/policies/unpublish}.
+
+\bibitem[PatrickJS(2023)]{npm-everything}
+PatrickJS.
+\newblock everything - npm, December 2023.
+\newblock URL \url{https://www.npmjs.com/package/everything}.
+
+\bibitem[Gee(2015)]{npm-everything-else}
+Alex Gee.
+\newblock everything-else, June 2015.
+\newblock URL \url{https://www.npmjs.com/package/everything-else}.
+
+\bibitem[Krafft(2018)]{npm-no-one-left-behind-dependencies}
+Pierre Krafft.
+\newblock no-one-left-behind, February 2018.
+\newblock URL
+  \url{https://web.archive.org/web/20210512200558/https://www.npmjs.com/package/no-one-left-behind}.
+
+\bibitem[npm(2023{\natexlab{b}})]{npm-no-one-left-behind-security}
+npm.
+\newblock no-one-left-behind, January 2023{\natexlab{b}}.
+\newblock URL \url{https://www.npmjs.com/package/no-one-left-behind}.
+
+\bibitem[Aboukhadijeh(2024)]{socket-everything}
+Feross Aboukhadijeh.
+\newblock When "everything" becomes too much: The npm package chaos of 2024,
+  January 2024.
+\newblock URL
+  \url{https://socket.ist/posts/when-everything-becomes-too-much-the-npm-package-chaos-of-2024}.
+
+\bibitem[Holbrook(2022{\natexlab{a}})]{github-hoarders-dependencies}
+Josh Holbrook.
+\newblock hoarders/package.json at f0172e83540c868621d1f67832493ca4f7add3f2
+  jfhbrook/hoarders, June 2022{\natexlab{a}}.
+\newblock URL
+  \url{https://github.com/jfhbrook/hoarders/blob/f0172e83540c868621d1f67832493ca4f7add3f2/package.json}.
+
+\bibitem[Holbrook(2022{\natexlab{b}})]{github-hoarders}
+Josh Holbrook.
+\newblock jfhbrook/hoarders: node.js's most complete "utility grab-bag".
+  dedicated to substack., March 2022{\natexlab{b}}.
+\newblock URL \url{https://github.com/jfhbrook/hoarders}.
+
+\bibitem[Koçulu(2016)]{medium-azer}
+Azer Koçulu.
+\newblock I've just liberated my modules, March 2016.
+\newblock URL
+  \url{https://web.archive.org/web/20160323000000/https://medium.com/@azerbike/i-ve-just-liberated-my-modules-9045c06be67c#.5g9x9r23t}.
+
+\end{thebibliography}
