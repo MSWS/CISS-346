@@ -1,9 +1,14 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[npm(2023{\natexlab{a}})]{npm}
+npm.
+\newblock npm, January 2023{\natexlab{a}}.
+\newblock URL \url{https://www.npmjs.com/}.
 
 \bibitem[Nassri(2020)]{npmblog-stats}
 Ahmad Nassri.
@@ -50,6 +55,11 @@ Crunchbase.
 \newblock Kik - crunchbase company profile \& funding, February 2024.
 \newblock URL \url{https://www.crunchbase.com/organization/kik-interactive}.
 
+\bibitem[npm(2023{\natexlab{b}})]{npm-dispute-policy}
+npm.
+\newblock Dispute policy, December 2023{\natexlab{b}}.
+\newblock URL \url{https://docs.npmjs.com/policies/disputes}.
+
 \bibitem[Roberts(2016)]{medium-mikeroberts}
 Mike Roberts.
 \newblock A discussion about the breaking of the internet, March 2016.
@@ -67,9 +77,9 @@ Azer~Koçulu et~al.
 \newblock left-pad, May 2019.
 \newblock URL \url{https://github.com/left-pad/left-pad/network/dependents}.
 
-\bibitem[npm(2023{\natexlab{a}})]{npm-docs-unpublishing}
+\bibitem[npm(2023{\natexlab{c}})]{npm-docs-unpublishing}
 npm.
-\newblock npm unpublish policy, January 2023{\natexlab{a}}.
+\newblock npm unpublish policy, January 2023{\natexlab{c}}.
 \newblock URL \url{https://docs.npmjs.com/policies/unpublish}.
 
 \bibitem[uncenter(2024)]{uncenter-blog-everything}
@@ -82,6 +92,11 @@ Ceej Silverio.
 \newblock Api rate limiting rolling out, August 2017.
 \newblock URL
   \url{https://blog.npmjs.org/post/164799520460/api-rate-limiting-rolling-out.html}.
+
+\bibitem[Borins(2022)]{github-npm-ratelimiting}
+Myles Borins.
+\newblock Rate limit documentation for npm registry api, March 2022.
+\newblock URL \url{https://github.com/npm/feedback/discussions/658}.
 
 \bibitem[PatrickJS(2023)]{npm-everything}
 PatrickJS.
@@ -99,9 +114,9 @@ Pierre Krafft.
 \newblock URL
   \url{https://web.archive.org/web/20210512200558/https://www.npmjs.com/package/no-one-left-behind}.
 
-\bibitem[npm(2023{\natexlab{b}})]{npm-no-one-left-behind-security}
+\bibitem[npm(2023{\natexlab{d}})]{npm-no-one-left-behind-security}
 npm.
-\newblock no-one-left-behind, January 2023{\natexlab{b}}.
+\newblock no-one-left-behind, January 2023{\natexlab{d}}.
 \newblock URL \url{https://www.npmjs.com/package/no-one-left-behind}.
 
 \bibitem[Aboukhadijeh(2024)]{socket-everything}
@@ -130,9 +145,9 @@ Ax~Sharma.
 \newblock URL
   \url{https://www.bleepingcomputer.com/news/security/everything-blocks-devs-from-removing-their-own-npm-packages/}.
 
-\bibitem[npm(2023{\natexlab{c}})]{npm-tos}
+\bibitem[npm(2023{\natexlab{e}})]{npm-tos}
 npm.
-\newblock npm terms of service, December 2023{\natexlab{c}}.
+\newblock npm terms of service, December 2023{\natexlab{e}}.
 \newblock URL \url{https://docs.npmjs.com/policies/terms}.
 
 \bibitem[Koçulu(2016)]{appendix-medium-azer}

@@ -27,7 +27,7 @@
 
 \begin{abstract}
   npm (Node Package Manager) is a popular package manager owned by GitHub that
-  allows developers to share node packages and libraries. This article will
+  allows developers to share node packages and libraries \cite{npm}. This article will
   review and analyze the design flaw of npm and how it was broken by a single
   package, and will also review how GitHub responded to the incident and what
   actions they took in response.
@@ -93,10 +93,10 @@ by developers for years.
 
 The npm registry is a critical piece of infrastructure for the entire JavaScript
 community (and by extension, 99\% of websites \cite{w3techs}). Developers expect
-that the npm registry would be reliable, secure, and complete. However, the
+that the npm registry will be reliable, secure, and complete. However, the
 left-pad incident in 2016 \cite{npmblog-leftpad} and the everything package
 incident in 2023 \cite{youtube-everything} have shown that the npm registry is
-not as reliable as developers had hoped.
+not as mature as developers had hoped.
 
 \section{Historical Background}
 \subsection{Introduction}
@@ -105,8 +105,9 @@ Azer Koçulu is a software developer who was working on a personal project calle
 kik \cite{qz}. Coincidentally, Kik was also the name of a company in Ontario,
 Canada \cite{qz, crunchbase}. The company reached out to Koçulu requesting that
 he change the name of his project. Koçulu refused, and the company proceeded to
-file a complaint with npm \cite{qz}. npm then decided to transfer the name kik
-to the company, which caused Koçulu to remove all of his packages from the npm
+file a complaint with npm \cite{qz}. npm (following its Dispute Resolutinon
+Policy \cite{npm-dispute-policy}) then decided to transfer the name kik to the
+company, which caused Koçulu to remove all of his packages from the npm
 registry, stating
 
 "I want all my modules to be deleted including my account, along with this
@@ -177,8 +178,8 @@ chunk their dependencies into smaller packages
 sub-chunking was also required \cite{youtube-everything}.
 
 Unsurprisingly, npm also has a rate limit on how quickly packages can be
-published \cite{npm-ratelimiting}. Thus, PatrickJS and Evan Boehs used a GitHub
-Action workflow to publish the packages
+published \cite{npm-ratelimiting,github-npm-ratelimiting}. Thus, PatrickJS and
+Evan Boehs used a GitHub Action workflow to publish the packages
 \cite{youtube-everything,uncenter-blog-everything}.
 
 \subsection{The Aftermath}
