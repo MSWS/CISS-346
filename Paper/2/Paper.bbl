@@ -1,4 +1,4 @@
-\begin{thebibliography}{28}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -108,6 +108,19 @@ Alex Gee.
 \newblock everything-else, June 2015.
 \newblock URL \url{https://www.npmjs.com/package/everything-else}.
 
+\bibitem[Holbrook(2022{\natexlab{a}})]{github-hoarders-dependencies}
+Josh Holbrook.
+\newblock hoarders/package.json at f0172e83540c868621d1f67832493ca4f7add3f2 ·
+  jfhbrook/hoarders, June 2022{\natexlab{a}}.
+\newblock URL
+  \url{https://github.com/jfhbrook/hoarders/blob/f0172e83540c868621d1f67832493ca4f7add3f2/package.json}.
+
+\bibitem[Holbrook(2022{\natexlab{b}})]{github-hoarders}
+Josh Holbrook.
+\newblock jfhbrook/hoarders: node.js's most complete "utility grab-bag".
+  dedicated to substack., March 2022{\natexlab{b}}.
+\newblock URL \url{https://github.com/jfhbrook/hoarders}.
+
 \bibitem[Krafft(2018)]{npm-no-one-left-behind-dependencies}
 Pierre Krafft.
 \newblock no-one-left-behind, February 2018.
@@ -125,25 +138,19 @@ Feross Aboukhadijeh.
   January 2024.
 \newblock URL \url{https://socket.dev/blog/when-everything-becomes-too-much}.
 
-\bibitem[Holbrook(2022{\natexlab{a}})]{github-hoarders-dependencies}
-Josh Holbrook.
-\newblock hoarders/package.json at f0172e83540c868621d1f67832493ca4f7add3f2 ·
-  jfhbrook/hoarders, June 2022{\natexlab{a}}.
-\newblock URL
-  \url{https://github.com/jfhbrook/hoarders/blob/f0172e83540c868621d1f67832493ca4f7add3f2/package.json}.
-
-\bibitem[Holbrook(2022{\natexlab{b}})]{github-hoarders}
-Josh Holbrook.
-\newblock jfhbrook/hoarders: node.js's most complete "utility grab-bag".
-  dedicated to substack., March 2022{\natexlab{b}}.
-\newblock URL \url{https://github.com/jfhbrook/hoarders}.
-
 \bibitem[Sharma(2024)]{bleepingcomputer-everything}
 Ax~Sharma.
 \newblock 'everything' blocks devs from removing their own npm packages,
   January 2024.
 \newblock URL
   \url{https://www.bleepingcomputer.com/news/security/everything-blocks-devs-from-removing-their-own-npm-packages/}.
+
+\bibitem[French(2024)]{scmagazine-everything-blog}
+Laura French.
+\newblock Npm registry prank leaves developers unable to unpublish packages,
+  January 2024.
+\newblock URL
+  \url{https://www.scmagazine.com/news/npm-registry-prank-leaves-developers-unable-to-unpublish-packages}.
 
 \bibitem[npm(2023{\natexlab{e}})]{npm-tos}
 npm.
